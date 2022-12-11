@@ -4,7 +4,8 @@
             <div class="profileImg">
                 <!-- need dynamic rendering for all of these eventually -->
                 <!-- placeholders for now -->
-                <img :src="profilePic" alt="">
+                <!-- <img :src="profilePic" alt=""> -->
+                <img src="" alt="">
             </div>
             <div class="profileInfo">
                 <h2>Placeholder Name</h2>

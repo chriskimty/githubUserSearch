@@ -1,47 +1,51 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <nav class="devNav">
+      <h1>devfinder</h1>
+      <div class="modeSwitch">
+        <!-- later, need to make both dynamic, and make div clickable -->
+        <p>light</p>
+        <div class="modeIconBox">
+          <img :src="modeIcon" alt="">
+        </div>
+      </div>
+    </nav>
+    <SearchForm />
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script>
+import modeIcon from '../src/assets/icon-sun.svg'
+import modeIcon2 from '../src/assets/icon-moon.svg'
+import SearchForm from './components/SearchForm.vue'
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+export default {
+  name: 'App',
+  components: { SearchForm },
+  data() {
+    return {
+      modeIcon: modeIcon,
+    }
+  }
 }
+</script>
 
-@media (min-width: 1024px) {
-  header {
+<style>
+  .devNav {
     display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    justify-content: space-between;
+    align-items: center;
   }
-
-  .logo {
-    margin: 0 2rem 0 0;
+  .devNav h1 {
+    font-size: 2.6rem;
+    font-weight: bold;
   }
-
-  header .wrapper {
+  .devNav p {
+    font-size: 1.3rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+  }
+  .modeSwitch {
     display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
   }
-}
 </style>

@@ -10,16 +10,18 @@
       </div>
     </nav>
     <SearchForm />
+    <Results />
 </template>
 
 <script>
 import modeIcon from '../src/assets/icon-sun.svg'
 import modeIcon2 from '../src/assets/icon-moon.svg'
 import SearchForm from './components/SearchForm.vue'
+import Results from './components/Results.vue'
 
 export default {
   name: 'App',
-  components: { SearchForm },
+  components: { SearchForm, Results },
   data() {
     return {
       modeIcon: modeIcon,

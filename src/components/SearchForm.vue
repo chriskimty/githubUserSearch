@@ -9,16 +9,11 @@
             <button>Search</button>
         </form>
     </div>
-
-    <Results />
 </template>
 
 <script>
-import Results from '../components/Results.vue'
 import search from '../assets/icon-search.svg'
 export default {
-    name: 'SearchForm',
-    components: { Results },
     data() {
         return {
             search: search

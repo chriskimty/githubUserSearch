@@ -8,12 +8,12 @@
                 <img src="" alt="">
             </div>
             <div class="profileInfo">
-                <h2>Placeholder Name</h2>
-                <p>@placeholderUser</p>
+                <h2>{{ info.name }}</h2>
+                <p>{{ info.login }}</p>
                 <p>Joined XX Jan 20XX</p>
             </div>
             <div class="bio">
-                <p>This is a placeholder bio.</p>
+                <p>{{ info.bio }}</p>
             </div>
         </div>
 
@@ -29,8 +29,8 @@
                 <tbody>
                     <tr>
                         <td>X</td>
-                        <td>Y</td>
-                        <td>Z</td>
+                        <td>{{info.followers}}</td>
+                        <td>{{info.following}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -50,16 +50,12 @@
 </template>
 
 <script>
-
-// export default {
-//     data() {
-//         return {
-
-//         }
-//     }
-// }
+    export default {
+        name: 'Results',
+        props: [ 'info' ]
+    }
 </script>
-
+    
 <style>
 #results h2 {
     font-size: 2.6rem;

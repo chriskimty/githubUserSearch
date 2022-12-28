@@ -5,23 +5,23 @@
         <!-- later, need to make both dynamic, and make div clickable -->
         <p>light</p>
         <div class="modeIconBox">
-          <img :src="modeIcon" alt="">
+          <button class="modeButton">
+            <img :src="modeIcon" alt="">
+          </button>
         </div>
       </div>
     </nav>
     <SearchForm />
-    <Results />
 </template>
 
 <script>
 import modeIcon from '../src/assets/icon-sun.svg'
-import modeIcon2 from '../src/assets/icon-moon.svg'
+// import modeIcon2 from '../src/assets/icon-moon.svg'
 import SearchForm from './components/SearchForm.vue'
-import Results from './components/Results.vue'
 
 export default {
   name: 'App',
-  components: { SearchForm, Results },
+  components: { SearchForm },
   data() {
     return {
       modeIcon: modeIcon,
@@ -50,4 +50,23 @@ export default {
     align-items: center;
     gap: 15px;
   }
+
+  .modeButton {
+    background: none;
+    border: none;
+  }
+
+  .modeButton:hover {
+    background: none;
+  }
+
+  .modeButton:focus {
+    background: none;
+  }
+
+  .modeButton img {
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
 </style>

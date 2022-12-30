@@ -90,7 +90,7 @@
         }
     }
 
-    // need to add v-if and v-else for things that display as 'unknown' if data is not available
+    // need to add v-if and v-else for things that display as 'unknown' if data is not available (i.e. null)
 </script>
     
 <style>

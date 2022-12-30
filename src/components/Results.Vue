@@ -2,15 +2,12 @@
     <div id="results">
         <div class="profileBox">
             <div class="profileImg">
-                <!-- need dynamic rendering for all of these eventually -->
-                <!-- placeholders for now -->
-                <!-- <img :src="profilePic" alt=""> -->
-                <img src="" alt="">
+                <img :src="profilePic" alt="selected user's profile picture">
             </div>
             <div class="profileInfo">
                 <h2>{{ info.name }}</h2>
-                <p>{{ info.login }}</p>
-                <p>Joined XX Jan 20XX</p>
+                <p>@{{ info.login }}</p>
+                <p>{{ formatDate(info.created_at) }}</p>
             </div>
             <div class="bio">
                 <p>{{ info.bio }}</p>
@@ -28,9 +25,9 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>X</td>
-                        <td>{{info.followers}}</td>
-                        <td>{{info.following}}</td>
+                        <td>{{ info.public_repos }}</td>
+                        <td>{{ info.followers }}</td>
+                        <td>{{ info.following }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -38,22 +35,62 @@
 
         <div class="contact">
             <ul class="topList">
-                <li>City</li>
-                <li>Portfolio</li>
+                <div class="listBox">
+                    <img :src="location" alt="location icon">
+                    <li>{{ info.location }}</li>
+                </div>
+                <div class="listBox">
+                    <img :src="website" alt="website icon">
+                    <li>{{ info.blog }}</li>
+                </div>
+                
             </ul>
             <ul class="bottomList">
-                <li>Twitter</li>
-                <li>Company</li>
+                <div class="listBox">
+                    <img :src="twitter" alt="twitter icon">
+                    <li>{{ info.twitter_username }}</li>
+                </div>
+                
+                <div class="listBox">
+                    <img :src="company" alt="company icon">
+                    <li>{{ info.company }}</li>
+                </div>
             </ul>
         </div>
     </div>
 </template>
 
 <script>
+    import location from '../assets/icon-location.svg'
+    import twitter from  '../assets/icon-twitter.svg'
+    import website from '../assets/icon-website.svg'
+    import company from '../assets/icon-company.svg'
+    import dayjs from 'dayjs'
     export default {
         name: 'Results',
-        props: [ 'info' ]
+        props: [ 'info' ],
+        data(){
+            return {
+                location,
+                twitter, 
+                website, 
+                company 
+            }
+        },
+        computed: {
+            profilePic(){
+                return this.info.avatar_url
+            },
+        },
+        methods: {
+            formatDate(string){
+                const date = dayjs(string)
+                return date.format('DD MMM YYYY')
+            }
+        }
     }
+
+    // need to add v-if and v-else for things that display as 'unknown' if data is not available
 </script>
     
 <style>

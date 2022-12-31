@@ -1,0 +1,8 @@
+// @use "./partials/variables" as *;
+@use "./partials/baseStyles";
+@use "./partials/setup";
+
+@use "./partials/nav";
+@use "./partials/results";
+@use "./partials/searchForm";
+@use "./partials/mediaQueries";

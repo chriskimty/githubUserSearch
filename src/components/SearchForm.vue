@@ -57,13 +57,3 @@ export default {
     }
 }
 </script>
-
-<style>
-#searchForm {
-    display: flex;
-}
-
-button {
-    cursor: pointer;
-}
-</style>

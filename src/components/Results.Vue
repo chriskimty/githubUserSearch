@@ -97,11 +97,3 @@
         }
     }
 </script>
-    
-<style>
-#results h2 {
-    font-size: 2.6rem;
-}
-
-
-</style>

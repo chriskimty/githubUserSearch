@@ -1,0 +1,33 @@
+.devNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+        font-size: 2.6rem;
+        font-weight: bold;
+    }
+    p {
+        font-size: 1.3rem;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+    }
+  }
+
+  .modeSwitch {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .modeButton {
+    background: none;
+    border: none;
+    &:hover {
+        background: none;
+    }
+    &:focus {
+        background: none;
+    }
+  }

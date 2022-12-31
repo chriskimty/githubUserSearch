@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Space+Mono&display=swap');
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--primaryColor);
+    font-family: "Space Mono", monospace;
+    color: var(--secondaryColor);
+    max-width: 1728px;
+    width: 60%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+:root {
+    --primaryColor: #F6F8FF;
+    --secondaryColor: #4B6A9B;
+    --tertiaryColor: #FEFEFE;
+}
+
+:root.darkTheme {
+    --primaryColor: #141D2F;
+    --secondaryColor: #FFFFFF;
+    --tertiaryColor: #1D2A47;
+}
+
+button {
+    background-color: #0179FF;
+    color: #FFFFFF;
+    padding: 14px 28px;
+    min-width: 84px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+button:hover, button:focus {
+    background-color: #60ABFE;
+}
+
+p {
+    font-size: 1.5rem;
+}

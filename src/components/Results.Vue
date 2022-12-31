@@ -5,12 +5,14 @@
                 <img :src="profilePic" alt="selected user's profile picture">
             </div>
             <div class="profileInfo">
-                <h2>{{ info.name }}</h2>
+                <h2 v-if="info.name === null">No Name</h2>
+                <h2 v-else>{{ info.name }}</h2>
                 <p>@{{ info.login }}</p>
                 <p>{{ formatDate(info.created_at) }}</p>
             </div>
             <div class="bio">
-                <p>{{ info.bio }}</p>
+                <p v-if="info.bio === null">This profile has no bio</p>
+                <p v-else>{{ info.bio }}</p>
             </div>
         </div>
 
@@ -37,23 +39,27 @@
             <ul class="topList">
                 <div class="listBox">
                     <img :src="location" alt="location icon">
-                    <li>{{ info.location }}</li>
+                    <li v-if="info.location === null">{{notAvail}}</li>
+                    <li v-else>{{ info.location }}</li>
                 </div>
                 <div class="listBox">
                     <img :src="website" alt="website icon">
-                    <li>{{ info.blog }}</li>
+                    <li v-if='info.blog === "" '>{{notAvail}}</li>
+                    <li v-else>{{ info.blog }}</li>
                 </div>
                 
             </ul>
             <ul class="bottomList">
                 <div class="listBox">
                     <img :src="twitter" alt="twitter icon">
-                    <li>{{ info.twitter_username }}</li>
+                    <li v-if="info.twitter_username === null">{{notAvail}}</li>
+                    <li v-else>{{ info.twitter_username }}</li>
                 </div>
                 
                 <div class="listBox">
                     <img :src="company" alt="company icon">
-                    <li>{{ info.company }}</li>
+                    <li v-if="info.company === null">{{notAvail}}</li>
+                    <li v-else>{{ info.company }}</li>
                 </div>
             </ul>
         </div>
@@ -74,7 +80,8 @@
                 location,
                 twitter, 
                 website, 
-                company 
+                company,
+                notAvail: 'Not available' 
             }
         },
         computed: {
@@ -89,12 +96,12 @@
             }
         }
     }
-
-    // need to add v-if and v-else for things that display as 'unknown' if data is not available (i.e. null)
 </script>
     
 <style>
 #results h2 {
     font-size: 2.6rem;
 }
+
+
 </style>

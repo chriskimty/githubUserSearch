@@ -23,6 +23,12 @@ body {
 }
 
 :root {
+    --primaryColor: #F6F8FF;
+    --secondaryColor: #4B6A9B;
+    --tertiaryColor: #FEFEFE;
+}
+
+:root.darkTheme {
     --primaryColor: #141D2F;
     --secondaryColor: #FFFFFF;
     --tertiaryColor: #1D2A47;
@@ -51,7 +57,6 @@ ul {
     display: flex;
     justify-content: space-evenly;
     text-align: left;
-    /* gap: 80px; */
     width: 100%;
 }
 
@@ -62,4 +67,8 @@ li {
 
 table {
     font-size: 1.5rem;
+}
+
+#results, #searchForm {
+    background-color: var(--tertiaryColor);
 }

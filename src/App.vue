@@ -1,72 +1,14 @@
 <template>
-    <nav class="devNav">
-      <h1>devfinder</h1>
-      <div class="modeSwitch">
-        <!-- later, need to make both dynamic, and make div clickable -->
-        <p>light</p>
-        <div class="modeIconBox">
-          <button class="modeButton">
-            <img :src="modeIcon" alt="">
-          </button>
-        </div>
-      </div>
-    </nav>
+    <Nav />
     <SearchForm />
 </template>
 
 <script>
-import modeIcon from '../src/assets/icon-sun.svg'
-// import modeIcon2 from '../src/assets/icon-moon.svg'
-import SearchForm from './components/SearchForm.vue'
+  import SearchForm from './components/SearchForm.vue'
+  import Nav from './components/Nav.vue'
 
-export default {
-  name: 'App',
-  components: { SearchForm },
-  data() {
-    return {
-      modeIcon: modeIcon,
-    }
+  export default {
+    name: 'App',
+    components: { Nav, SearchForm },
   }
-}
 </script>
-
-<style>
-  .devNav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .devNav h1 {
-    font-size: 2.6rem;
-    font-weight: bold;
-  }
-  .devNav p {
-    font-size: 1.3rem;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-  }
-  .modeSwitch {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
-
-  .modeButton {
-    background: none;
-    border: none;
-  }
-
-  .modeButton:hover {
-    background: none;
-  }
-
-  .modeButton:focus {
-    background: none;
-  }
-
-  .modeButton img {
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
-</style>

@@ -1,5 +1,6 @@
 <template>
-    <Results :info="this.result"/>
+    <div v-if="this.error"> {{this.error}} </div>
+    <Results v-else :info="this.result" />
 </template>
 
 <script>
@@ -12,14 +13,14 @@
         data(){
             return {
                 user: 'chriskimty',
-                result: ''
+                result: '',
+                error: null
             }
         },
         mounted(){
             axios.get(`https://api.github.com/users/${this.user}`)
                 .then(res => (this.result = res.data))
-                // add better error handling after
-                .catch(err => console.log(err.message))
+                .catch(err => this.error = 'Something went wrong. Please try again.')
         }
     }
 </script>

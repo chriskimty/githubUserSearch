@@ -39,12 +39,12 @@
             <ul class="topList">
                 <div class="listBox">
                     <img :src="location" alt="location icon">
-                    <li v-if="info.location === null">{{notAvail}}</li>
+                    <li v-if="info.location === null" class="noData">{{notAvail}}</li>
                     <li v-else>{{ info.location }}</li>
                 </div>
                 <div class="listBox">
                     <img :src="website" alt="website icon">
-                    <li v-if='info.blog === "" '>{{notAvail}}</li>
+                    <li v-if='info.blog === "" ' class="noData">{{notAvail}} </li>
                     <li v-else>{{ info.blog }}</li>
                 </div>
                 
@@ -52,13 +52,13 @@
             <ul class="bottomList">
                 <div class="listBox">
                     <img :src="twitter" alt="twitter icon">
-                    <li v-if="info.twitter_username === null">{{notAvail}}</li>
+                    <li v-if="info.twitter_username === null" class="noData">{{notAvail}}</li>
                     <li v-else>{{ info.twitter_username }}</li>
                 </div>
                 
                 <div class="listBox">
                     <img :src="company" alt="company icon">
-                    <li v-if="info.company === null">{{notAvail}}</li>
+                    <li v-if="info.company === null" class="noData">{{notAvail}}</li>
                     <li v-else>{{ info.company }}</li>
                 </div>
             </ul>

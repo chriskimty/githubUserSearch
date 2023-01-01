@@ -1,5 +1,5 @@
 <template>
-    <section id="searchForm">
+    <section id="searchForm" v-if="!this.error">
         <div class="searchIcon">
             <img :src="search" alt="">
         </div>
@@ -16,7 +16,11 @@
 
     <section id="searchResults">
         <Default v-if="showDefault"/>
-        <Results v-if="clickResults" :info="this.result"/>
+        <div v-if="this.error"> 
+            {{this.error}} 
+            <button @click="refresh" class="return">Go back</button>
+        </div>
+        <Results v-else-if="clickResults" :info="this.result"/>
     </section>
     
 </template>
@@ -36,23 +40,35 @@ export default {
             result: '',
             search: search,
             clickResults: false,
-            showDefault: true
+            showDefault: true, 
+            error: null
         }
     },
     methods: {
         getData() {
             axios.get(`https://api.github.com/users/${this.user}`)
-                .then(res => (this.result = res.data))
-                // add better error handling after
-                .catch(err => console.log(err.message))
-            this.showResults()
-            this.removeDefault()
+                .then(res =>
+                    this.result = res.data,
+                    this.showResults(),
+                    this.removeDefault(),
+                    this.user = ''
+                )
+                .catch(err =>
+                    this.error = 'Something went wrong. Please try again.', 
+            )
+            // Come back to this!**
+            // if (this.user.login = null) {
+            //     this.error = 'This user does not exist. Please try your search again'
+            // } 
         },
         showResults() {
             this.clickResults = true
         },
         removeDefault() {
             this.showDefault = false
+        },
+        refresh() {
+            window.location.reload();
         }
     }
 }

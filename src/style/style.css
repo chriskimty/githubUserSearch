@@ -19,7 +19,7 @@ body {
   --tertiaryColor: #FEFEFE;
 }
 
-:root.darkTheme {
+.darkTheme {
   --primaryColor: #141D2F;
   --secondaryColor: #FFFFFF;
   --tertiaryColor: #1D2A47;
@@ -33,6 +33,7 @@ button {
   border: none;
   border-radius: 10px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 button:hover, button:focus {

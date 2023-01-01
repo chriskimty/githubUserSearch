@@ -30,6 +30,8 @@ export default {
   methods: {
     switchMode(){
         this.nightMode = !this.nightMode
+        // toggles the class of 'darkTheme' - not sure if using the vanilla JS method and targeting DOM is the best way in Vue
+        document.querySelector("body").classList.toggle("darkTheme")
     }
   }
 }

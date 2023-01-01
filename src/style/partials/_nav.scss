@@ -13,15 +13,15 @@
     }
   }
 
-  .modeSwitch {
+.modeSwitch {
     display: flex;
     align-items: center;
     gap: 15px;
     cursor: pointer;
     transition: 0.3s;
-  }
+}
 
-  .modeButton {
+.modeButton {
     background: none;
     border: none;
     &:hover {
@@ -30,4 +30,4 @@
     &:focus {
         background: none;
     }
-  }
+}

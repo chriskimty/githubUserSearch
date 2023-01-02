@@ -20,6 +20,7 @@ body {
   --primaryColor: #F6F8FF;
   --secondaryColor: #4B6A9B;
   --tertiaryColor: #FEFEFE;
+  --iconBg: opacity(50%);
 }
 
 .darkTheme {
@@ -311,23 +312,86 @@ html {
 #results {
   background-color: var(--tertiaryColor);
   margin-top: 3%;
+  border-radius: 15px;
 }
 #results h2 {
   font-size: 2.6rem;
 }
-#results ul {
-  list-style: none;
+
+.profileBox {
   display: flex;
-  justify-content: space-evenly;
-  text-align: left;
+  flex-wrap: wrap;
+  padding-top: 20px;
+}
+.profileBox .profileImg {
+  width: 25%;
+  text-align: center;
+  padding-top: 15px;
+}
+.profileBox .profileImg img {
+  width: 65%;
+  border-radius: 50%;
+}
+.profileBox .profileInfo {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.profileBox .profileInfo .mainInfo {
+  display: flex;
+  flex-direction: column;
+}
+.profileBox .profileInfo .mainInfo .nameAndDate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  min-width: 500px;
+}
+.profileBox .profileInfo .mainInfo .login {
+  color: #0179FF;
+}
+
+.stats {
   width: 100%;
+  background-color: var(--primaryColor);
+  border-radius: 15px;
+  padding: 3%;
 }
-#results ul li {
-  font-size: 1.5rem;
-  width: 50%;
+.stats table {
+  width: 100%;
+  table-layout: fixed;
+  padding: 5px 15px;
 }
-#results table {
+.stats th {
+  font-size: 13px;
+  text-align: left;
+}
+.stats td {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.contact {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.contact ul {
+  padding: 0px;
+  list-style: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 70px;
+}
+.contact ul li {
   font-size: 1.5rem;
+  display: inline-block;
+}
+.contact .noData {
+  filter: var(--iconBg);
 }
 
 #searchForm {

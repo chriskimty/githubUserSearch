@@ -5,63 +5,68 @@
                 <img :src="profilePic" alt="selected user's profile picture">
             </div>
             <div class="profileInfo">
-                <h2 v-if="info.name === null">No Name</h2>
-                <h2 v-else>{{ info.name }}</h2>
-                <p>@{{ info.login }}</p>
-                <p>Joined {{ formatDate(info.created_at) }}</p>
+                <div class="mainInfo">
+                    <div class="nameAndDate">
+                        <h2 v-if="info.name === null">No Name</h2>
+                        <h2 v-else>{{ info.name }}</h2>
+                        <p>Joined {{ formatDate(info.created_at) }}</p>
+                    </div>
+                        <p class="login">@{{ info.login }}</p>
+                    <div class="bio">
+                        <p v-if="info.bio === null">This profile has no bio</p>
+                        <p v-else>{{ info.bio }}</p>
+                    </div>
+                </div>
+                <div class="stats">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Repos</th>
+                                <th>Followers</th>
+                                <th>Following</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{ info.public_repos }}</td>
+                                <td>{{ info.followers }}</td>
+                                <td>{{ info.following }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="contact">
+                    <ul class="topList">
+                        <div class="listBox">
+                            <img :src="location" alt="location icon" v-if="info.location === null" class="noData">
+                            <img :src="location" alt="location icon" v-else>
+                            <li v-if="info.location === null" class="noData">{{notAvail}}</li>
+                            <li v-else>{{ info.location }}</li>
+                        </div>
+                        <div class="listBox">
+                            <img :src="website" alt="website icon" v-if='info.blog === "" ' class="noData">
+                             <img :src="website" alt="website icon" v-else>
+                            <li v-if='info.blog === "" ' class="noData">{{notAvail}} </li>
+                            <li v-else>{{ info.blog }}</li>
+                        </div>
+                    </ul>
+                    <ul class="bottomList">
+                        <div class="listBox">
+                            <img :src="twitter" alt="twitter icon" v-if="info.twitter_username === null">
+                            <img :src="twitter" alt="twitter icon" v-else>
+                            <li v-if="info.twitter_username === null" class="noData">{{notAvail}}</li>
+                            <li v-else>{{ info.twitter_username }}</li>
+                        </div>
+                        
+                        <div class="listBox">
+                            <img :src="company" alt="company icon" v-if="info.company === null" class="noData">
+                            <img :src="company" alt="company icon" v-else>
+                            <li v-if="info.company === null" class="noData">{{notAvail}}</li>
+                            <li v-else>{{ info.company }}</li>
+                        </div>
+                    </ul>
+                </div>
             </div>
-            <div class="bio">
-                <p v-if="info.bio === null">This profile has no bio</p>
-                <p v-else>{{ info.bio }}</p>
-            </div>
-        </div>
-
-        <div class="stats">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Repos</th>
-                        <th>Followers</th>
-                        <th>Following</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>{{ info.public_repos }}</td>
-                        <td>{{ info.followers }}</td>
-                        <td>{{ info.following }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="contact">
-            <ul class="topList">
-                <div class="listBox">
-                    <img :src="location" alt="location icon">
-                    <li v-if="info.location === null" class="noData">{{notAvail}}</li>
-                    <li v-else>{{ info.location }}</li>
-                </div>
-                <div class="listBox">
-                    <img :src="website" alt="website icon">
-                    <li v-if='info.blog === "" ' class="noData">{{notAvail}} </li>
-                    <li v-else>{{ info.blog }}</li>
-                </div>
-                
-            </ul>
-            <ul class="bottomList">
-                <div class="listBox">
-                    <img :src="twitter" alt="twitter icon">
-                    <li v-if="info.twitter_username === null" class="noData">{{notAvail}}</li>
-                    <li v-else>{{ info.twitter_username }}</li>
-                </div>
-                
-                <div class="listBox">
-                    <img :src="company" alt="company icon">
-                    <li v-if="info.company === null" class="noData">{{notAvail}}</li>
-                    <li v-else>{{ info.company }}</li>
-                </div>
-            </ul>
         </div>
     </div>
 </template>

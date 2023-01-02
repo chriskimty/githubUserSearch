@@ -1,23 +1,90 @@
 #results {
     background-color: var(--tertiaryColor);
     margin-top: 3%;
+    border-radius: 15px;
     h2 {
         font-size: 2.6rem;
     }
+}
+    
+.profileBox {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
 
-    ul {
-        list-style: none;
-        display: flex;
-        justify-content: space-evenly;
-        text-align: left;
-        width: 100%;
-        li {
-            font-size: 1.5rem;
-            width: 50%;
+    .profileImg {
+        width: 25%;
+        text-align: center;
+        padding-top: 15px;
+        img {
+            width: 65%;
+            border-radius: 50%;
         }
     }
 
-    table {
-        font-size: 1.5rem;
+    .profileInfo {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        .mainInfo {
+            display: flex;
+            flex-direction: column;
+            
+            .nameAndDate {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: nowrap;
+                min-width: 500px;
+            }
+            .login {
+                color: #0179FF;
+            }
+        }
     }
+}
+
+.stats {
+    width: 100%;
+    background-color: var(--primaryColor);
+    border-radius: 15px;
+    padding: 3%;
+    table {
+        width: 100%;
+        table-layout: fixed;
+        padding: 5px 15px;
+    }
+    th {
+        font-size: 13px;
+        text-align: left;
+    }
+    td {
+        font-size: 22px;
+        font-weight: bold;
+    }
+}
+
+.contact {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    ul {
+        padding: 0px;
+        list-style: none;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        gap: 70px;
+        li {
+            font-size: 1.5rem;
+            display: inline-block;
+        }
+    }
+
+    .noData {
+        filter: var(--iconBg);
+    }
+
+
 }

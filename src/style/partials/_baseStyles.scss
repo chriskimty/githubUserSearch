@@ -2,6 +2,9 @@
 
 html {
     font-size: 62.5%;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 body {
@@ -9,8 +12,8 @@ body {
     font-family: "Space Mono", monospace;
     color: var(--secondaryColor);
     max-width: 1728px;
-    width: 60%;
-    max-width: 800px;
+    width: 70%;
+    max-width: 740px;
     margin: 0 auto;
 }
 

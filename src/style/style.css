@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Space+Mono&display=swap");
 html {
   font-size: 62.5%;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 body {
@@ -8,8 +11,8 @@ body {
   font-family: "Space Mono", monospace;
   color: var(--secondaryColor);
   max-width: 1728px;
-  width: 60%;
-  max-width: 800px;
+  width: 70%;
+  max-width: 740px;
   margin: 0 auto;
 }
 
@@ -271,6 +274,8 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 22%;
+  padding-bottom: 3%;
 }
 .devNav h1 {
   font-size: 2.6rem;
@@ -285,7 +290,6 @@ html {
 .modeSwitch {
   display: flex;
   align-items: center;
-  gap: 15px;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -293,6 +297,9 @@ html {
 .modeButton {
   background: none;
   border: none;
+  padding: 0px;
+  text-align: right;
+  min-width: 35px;
 }
 .modeButton:hover {
   background: none;
@@ -303,6 +310,7 @@ html {
 
 #results {
   background-color: var(--tertiaryColor);
+  margin-top: 3%;
 }
 #results h2 {
   font-size: 2.6rem;
@@ -325,7 +333,30 @@ html {
 #searchForm {
   background-color: var(--tertiaryColor);
   display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 73px;
+  border-radius: 15px;
+}
+#searchForm .searchIcon img {
+  width: 90%;
+  padding-left: 10px;
 }
 #searchForm button {
   cursor: pointer;
+  font-size: 16px;
+  font-family: "Space Mono", monospace;
+  padding: 17px 28px;
+}
+
+.form input {
+  background-color: var(--tertiaryColor);
+  color: var(--secondaryColor);
+  border: none;
+  font-family: "Space Mono", monospace;
+  font-size: 1.8rem;
+  width: 560px;
+}
+.form input:focus {
+  outline: none;
 }/*# sourceMappingURL=style.css.map */

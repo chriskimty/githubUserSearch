@@ -8,7 +8,7 @@
                 <h2 v-if="info.name === null">No Name</h2>
                 <h2 v-else>{{ info.name }}</h2>
                 <p>@{{ info.login }}</p>
-                <p>{{ formatDate(info.created_at) }}</p>
+                <p>Joined {{ formatDate(info.created_at) }}</p>
             </div>
             <div class="bio">
                 <p v-if="info.bio === null">This profile has no bio</p>

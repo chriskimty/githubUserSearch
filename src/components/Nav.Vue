@@ -4,12 +4,10 @@
       <div @click="switchMode" class="modeSwitch">
         <p v-if="nightMode">light</p>
         <p v-else>dark</p>
-        <div class="modeIconBox">
             <button class="modeButton">
                 <img v-if="nightMode" :src="lightIcon" alt="sun icon">
                 <img v-else :src="darkIcon" alt="moon icon">
             </button>
-        </div>
       </div>
     </nav>
 </template>

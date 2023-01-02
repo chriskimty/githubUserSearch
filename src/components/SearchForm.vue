@@ -1,7 +1,7 @@
 <template>
     <section id="searchForm" v-if="!this.error">
         <div class="searchIcon">
-            <img :src="search" alt="">
+            <img :src="search" alt="magnifying glass icon">
         </div>
         <form @submit.prevent="getData" class="form">
             <label class="sr-only">Search Github Username</label>
@@ -16,13 +16,12 @@
 
     <section id="searchResults">
         <Default v-if="showDefault"/>
-        <div v-if="this.error"> 
-            {{this.error}} 
+        <div v-if="this.error" class="error"> 
+            <p>{{this.error}}</p>
             <button @click="refresh" class="return">Go back</button>
         </div>
         <Results v-else-if="clickResults" :info="this.result"/>
     </section>
-    
 </template>
 
 <script>
@@ -47,19 +46,15 @@ export default {
     methods: {
         getData() {
             axios.get(`https://api.github.com/users/${this.user}`)
-                .then(res =>
+                .then(res => 
                     this.result = res.data,
                     this.showResults(),
                     this.removeDefault(),
                     this.user = ''
                 )
-                .catch(err =>
-                    this.error = 'Something went wrong. Please try again.', 
-            )
-            // Come back to this!**
-            // if (this.user.login = null) {
-            //     this.error = 'This user does not exist. Please try your search again'
-            // } 
+                .catch(err => 
+                    this.error = 'Something went wrong. Please try again or enter a valid username.'
+                )
         },
         showResults() {
             this.clickResults = true
@@ -68,7 +63,7 @@ export default {
             this.showDefault = false
         },
         refresh() {
-            window.location.reload();
+            window.location.reload()
         }
     }
 }

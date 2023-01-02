@@ -2,6 +2,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 22%;
+    padding-bottom: 3%;
     h1 {
         font-size: 2.6rem;
         font-weight: bold;
@@ -16,7 +18,6 @@
 .modeSwitch {
     display: flex;
     align-items: center;
-    gap: 15px;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -24,6 +25,9 @@
 .modeButton {
     background: none;
     border: none;
+    padding: 0px;
+    text-align: right;
+    min-width: 35px;
     &:hover {
         background: none;
     }
